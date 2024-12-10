@@ -1,0 +1,14 @@
+# elasticsearch/config/elasticsearch.yml
+cluster.name: "docker-cluster"
+network.host: 0.0.0.0
+
+# Disable X-Pack security features for simplicity
+xpack.security.enabled: false
+
+# Basic cluster settings
+node.name: ${HOSTNAME}
+cluster.initial_master_nodes:
+  - ${HOSTNAME}
+
+# Logging
+logger.level: INFO
